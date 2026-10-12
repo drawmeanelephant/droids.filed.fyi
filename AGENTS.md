@@ -37,6 +37,14 @@ from PATH. `boris`
 is the compiler; the rest are specialist tools (`boris-search-index`,
 `boris-content-audit`, ...) you almost never need directly.
 
+On a machine without the Mac checkout — a Linux CI box, a fresh Factory
+sandbox — build boris from source instead: install Zig 0.17+ from the
+official download index, `zig build` a boris checkout, and copy
+`zig-out/bin/boris` to `~/.local/bin/boris`. See boris's AGENTS.md
+cold-start section for the full path, including the Zig 0.17.0 fetch traps
+(`ResolvConfParseFailed` on a newline-less `resolv.conf`; standalone
+`zig fetch` packing cache tarballs one level too deep).
+
 Verify the kit before first use on a new machine:
 
 ```sh

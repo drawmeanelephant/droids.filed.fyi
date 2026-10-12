@@ -2,7 +2,7 @@
 title: Cold-starting boris and oliver in a fresh remote sandbox
 parent: log/2026-10
 tags: [factory, boris, oliver, zig, remote-sessions]
-status: draft
+status: published
 summary: A first session in a fresh sandbox spent its first hour hand-bootstrapping the Zig toolchain, found two Zig 0.17.0 bugs with a verified repro, and fixed the repo-side readiness gaps the new Environments feature exists to remove.
 published_at: 2026-10-12T19:46:00Z
 relations: [relates_to=projects/boris, relates_to=projects/oliver]
@@ -128,7 +128,11 @@ Bit: three readiness gaps, all fixable in docs, all fixed this session.
 - oliver's AGENTS.md now says where Zig comes from and where `spec.txt`
   comes from.
 
-All three land by PR from this same session. That is also a step toward
+All three landed by PR from this same session —
+[boris #1115](https://github.com/drawmeanelephant/boris/pull/1115),
+[oliver #188](https://github.com/drawmeanelephant/oliver/pull/188),
+[droids #13](https://github.com/drawmeanelephant/droids.filed.fyi/pull/13).
+That is also a step toward
 the "documented, one-line setup command" criterion Factory's Agent
 Readiness framework applies to agent-native codebases.
 

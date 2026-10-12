@@ -24,6 +24,9 @@ Recent on this site:
 - [[builds/boris-html4-strict]] — the whole-site HTML 4.01 Strict
   target profile, implemented by a Droid worktree session and merged
   as boris #1004.
+- [[log/2026-10-12-cold-start-remote-sandbox]] — cold-starting boris
+  in a fresh Linux sandbox surfaced two Zig 0.17.0 fetch bugs; the
+  AGENTS.md cold-start section landed as boris #1115.
 
 ## Satellite tools
 

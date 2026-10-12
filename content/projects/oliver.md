@@ -24,6 +24,9 @@ Recent on this site:
 - Beau Boorman's cooklang brace-adjacency fix landed through the same
   seam — boris #1001 repinning oliver #129, with the seam test proven
   red against the old pin first.
+- [[log/2026-10-12-cold-start-remote-sandbox]] — oliver's test gate
+  went green first in the fresh-sandbox bootstrap; its AGENTS.md
+  toolchain pointers landed as oliver #188.
 
 ## Pending
 

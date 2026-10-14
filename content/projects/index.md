@@ -33,6 +33,8 @@ grow as real usage evidence accumulates. Same discipline as
   atmosplorer.
 - [[projects/drawmeanelephant-com]] — the original art project:
   handwritten letters to breweries, asking one simple question.
+- [[farts/index]] — the fart projects have a dedicated drawer:
+  Flatlophone / fart-app, the Great Frontier Fart Off, and Brownnote.
 
 ## Not yet earned their own page
 

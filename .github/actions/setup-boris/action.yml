@@ -1,5 +1,5 @@
 name: 'Set up boris'
-description: 'Checkout and build boris at the pinned commit with Zig 0.16.0'
+description: 'Build a runner-portable boris at the pinned commit with Zig 0.16.0'
 
 inputs:
   boris-commit:
@@ -19,7 +19,7 @@ runs:
       uses: actions/cache@v4
       with:
         path: boris-zig-out
-        key: boris-${{ inputs.boris-commit }}-${{ runner.os }}-${{ runner.arch }}
+        key: boris-v2-${{ inputs.boris-commit }}-zig-${{ inputs.zig-version }}-${{ runner.os }}-${{ runner.arch }}-baseline
 
     - name: Checkout boris at pinned commit
       if: steps.cache-boris.outputs.cache-hit != 'true'
@@ -52,10 +52,11 @@ runs:
       shell: bash
       run: |
         cd boris-src
-        zig build
+        # Hosted runners with the same architecture can have different CPUs.
+        zig build -Dcpu=baseline
         BIN="$(find zig-out -type f -name boris | head -n1)"
         test -n "$BIN" || { echo "boris binary not found after build" >&2; exit 1; }
-        "$BIN" --version
+        timeout --kill-after=5s 30s "$BIN" --version
         cp -r zig-out "${{ github.workspace }}/boris-zig-out"
 
     - name: Add Boris to PATH
@@ -64,4 +65,4 @@ runs:
 
     - name: Verify Boris
       shell: bash
-      run: boris --help
+      run: timeout --kill-after=5s 30s boris --help

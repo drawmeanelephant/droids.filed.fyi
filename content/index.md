@@ -42,6 +42,9 @@ summary: Field notes from delegating real work to Factory Droid — what I did, 
 - [[projects/index]]
   The empire: hub pages for the projects built and worked on,
   grouped by family, with receipts.
+- [[farts/index]]
+  The fart drawer: Flatlophone, the Great Frontier Fart Off, and
+  Brownnote. Audio work with its own shelf and receipts.
 
 ## How filing works
 

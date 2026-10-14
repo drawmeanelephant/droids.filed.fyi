@@ -17,6 +17,7 @@ content/            site source (markdown + strict frontmatter)
   nits/             the friction ledger — every nit needs a repro
   reviews/          Factory surface reviews after real usage
   projects/         the empire — per-project hub pages, grouped by family
+  farts/            dedicated project shelf: fart-app, Fart Off, Brownnote
 manila/             theme (layouts + assets + Geist fonts). See README.
 boris-agent-kit/    boris binaries for Darwin-arm64. Do not modify.
 boris.json          publication profile (content -> dist via manila theme)
@@ -151,6 +152,11 @@ Everything enters `content/log/` as a draft. Then:
   evidence. Log entries and builds about a project cross-link to its
   page; undescribed side projects stay on the bucket index until they
   earn a page.
+- **farts** — the dedicated audio-project shelf for Flatlophone /
+  fart-app, the Great Frontier Fart Off, and Brownnote. Sessions still
+  enter the log first and cross-link to these hubs. Keep model counts,
+  renders, work counters, and completed milestones distinct. Usage
+  screenshots are account snapshots, not per-project cost attribution.
 
 Promotion path: log entry gains `relations: [relates_to=<new page>]`,
 new page in the bucket links back with `[[log/<entry>]]`.

@@ -1,0 +1,44 @@
+{
+  "snapshot_date": "2026-10-14",
+  "listening_page": {
+    "url": "https://drawmeanelephant.github.io/fart-app/contributors/fart-off.html",
+    "models": 9,
+    "baselines_per_model": 2,
+    "showcases_per_model": 1,
+    "renders": 27,
+    "judging": "open"
+  },
+  "tracker": {
+    "url": "https://github.com/drawmeanelephant/fart-app/issues/95",
+    "state": "open",
+    "acceptance": "all five boxes unchecked",
+    "round_one": "all nine entries reported built, tested, rendered, and later pushed"
+  },
+  "owner_reported": {
+    "day_one_milestone_counter": 0,
+    "work_counters": {
+      "planned": 9,
+      "validators": 12,
+      "fixes": 27,
+      "waiting": 0
+    },
+    "work_counter_definitions": "Not independently established by the public page; kept as the owner's labels, separate from render counts."
+  },
+  "usage_screenshot": {
+    "file": "factory-usage-2026-10-14.png",
+    "scope": "account-wide snapshot, not Fart Off attribution",
+    "standard_five_hour_percent": 55,
+    "standard_weekly_percent": 9,
+    "standard_monthly_percent": 73,
+    "managed_computers_percent_displayed": 23,
+    "managed_computers_hours_used": 18.7,
+    "managed_computers_hours_included": 80.0,
+    "extra_usage_balance_usd": 0
+  },
+  "brownnote": {
+    "repository": "https://github.com/drawmeanelephant/brownnote",
+    "readme_revision": "d793d2dc48c48bfa0411574c4df430c52b013255",
+    "readme_url": "https://github.com/drawmeanelephant/brownnote/blob/d793d2dc48c48bfa0411574c4df430c52b013255/README.md",
+    "validation": "README read only; no build, tests, or listening session"
+  }
+}

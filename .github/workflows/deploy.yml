@@ -18,6 +18,7 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Checkout site
         uses: actions/checkout@v5

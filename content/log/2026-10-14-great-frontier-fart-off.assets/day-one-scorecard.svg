@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="680" viewBox="0 0 720 680" role="img" aria-labelledby="title desc">
+  <title id="title">Day 1 on the Great Frontier Fart Off</title>
+  <desc id="desc">9 models entered. 27 farts now. Milestones still 0. Nine models each delivered two baselines and a showcase. Separate owner-reported work counters: 9 planned, 12 validators, 27 fixes, 0 waiting. October 14, 2026. Judging is open.</desc>
+  <rect width="720" height="680" rx="12" fill="#181715"/>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#b9afa4">
+    <circle cx="36" cy="39" r="5" fill="#ee6018"/>
+    <text x="52" y="46" font-size="18" letter-spacing="1.5">FIELD NOTES / 14 OCT 2026</text>
+    <rect x="590" y="23" width="98" height="32" rx="4" fill="none" stroke="#e2b86b"/>
+    <text x="639" y="45" text-anchor="middle" font-size="17" fill="#e2b86b">DAY 01</text>
+  </g>
+  <g font-family="system-ui, -apple-system, sans-serif" fill="#f3efe9">
+    <text x="32" y="107" font-size="32" font-weight="600">The Great Frontier Fart Off</text>
+    <text x="32" y="145" font-size="22" fill="#b9afa4">More farts. Same milestone count.</text>
+  </g>
+  <path d="M32 171H688" stroke="#413c37"/>
+  <g font-family="system-ui, -apple-system, sans-serif" text-anchor="middle" font-weight="650" font-size="116">
+    <text x="134" y="297" fill="#f3efe9">9</text>
+    <text x="360" y="297" fill="#e2b86b">27</text>
+    <text x="586" y="297" fill="#f3efe9">0</text>
+  </g>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" text-anchor="middle" font-size="20" fill="#b9afa4">
+    <text x="134" y="336">models entered</text>
+    <text x="360" y="336">farts now</text>
+    <text x="586" y="336">milestones</text>
+    <text x="586" y="363" fill="#e2b86b">still zero</text>
+  </g>
+  <path d="M246 199V350M474 199V350" stroke="#413c37"/>
+  <rect x="32" y="393" width="656" height="48" rx="5" fill="#211f1c"/>
+  <text x="360" y="424" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="21" fill="#f3efe9">9 models × (2 baselines + 1 showcase) = 27 renders</text>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#b9afa4">
+    <text x="32" y="480" font-size="18" letter-spacing=".7">WORK COUNTERS / OWNER-REPORTED</text>
+    <path d="M32 496H688M360 512V604M32 556H688" stroke="#413c37"/>
+    <g font-size="23" fill="#f3efe9">
+      <text x="32" y="538">9 <tspan fill="#b9afa4">planned</tspan></text>
+      <text x="386" y="538">12 <tspan fill="#b9afa4">validators</tspan></text>
+      <text x="32" y="590">27 <tspan fill="#b9afa4">fixes</tspan></text>
+      <text x="386" y="590">0 <tspan fill="#b9afa4">waiting</tspan></text>
+    </g>
+    <path d="M32 619H688" stroke="#413c37"/>
+    <text x="32" y="652" font-size="18">Judging open. The page is the receipt.</text>
+  </g>
+</svg>

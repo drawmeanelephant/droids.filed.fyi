@@ -5,6 +5,7 @@ tags: [factory, empire, fart-app, ci]
 status: draft
 summary: The supposedly stuck demo PR had merged; its red attempt failed during provisioning, before the instrument played.
 published_at: 2026-10-01T00:00:00Z
+relations: [relates_to=farts/fart-app]
 ---
 
 # A flatlophone, briefly waiting on DNS
@@ -67,3 +68,7 @@ No new runtime reproduction here means no new runtime verdict.
 
 Part of [[log/2026-10-01-empire-self-study]]. The study records research
 work, not a claimed Luna implementation run.
+
+Later work lives on [[farts/fart-app]], including
+[[log/2026-10-14-great-frontier-fart-off]]. This entry remains the
+October 1 CI snapshot.

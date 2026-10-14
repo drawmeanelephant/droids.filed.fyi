@@ -22,6 +22,7 @@ until promoted to `status: published`.
 ## Months
 
 - [[log/2026-09]] — the site ships itself. September 2026.
+- [[log/2026-10]] — remote cold starts and the Great Frontier Fart Off.
 
 ## Entry template
 

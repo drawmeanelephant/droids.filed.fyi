@@ -13,6 +13,7 @@ jobs:
   validate:
     name: Validate content
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -36,6 +37,7 @@ jobs:
   build:
     name: Build site
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     needs: validate
     steps:
       - uses: actions/checkout@v4
@@ -58,6 +60,7 @@ jobs:
   check-dist:
     name: Verify dist output
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     needs: build
     steps:
       - uses: actions/checkout@v4

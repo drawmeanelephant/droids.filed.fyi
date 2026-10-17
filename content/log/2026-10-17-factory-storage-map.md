@@ -43,7 +43,7 @@ The CLI and daemon state root. 20,317 files.
 | `artifacts/tool-outputs/` | 4.7M | full logs of tool outputs, up to ~1M each |
 | `generated-images/` | 2.0M | `GenerateImage` output |
 | `state/` + root JSONs | <1M | `task-invocations.json`, `background-processes.json`, `history.json`, `sessions-index.json`, `settings.json`, `host.json`, `computer.json`, `org-managed-settings.cache.json`, `update-policy.json`, `pending-askuser-requests.json`, `auth.v2.loginkeychain` (mode 600) |
-| small fry | <1M | `certs/system-certs-cache.json`, `cache/certs/factory-cli-child-certs.pem`, `tools/agent-browser/skill-data/`, `telemetry/droid-installation-id`, `crons/<project>/<uuid>/`, `attention-outbox/<id>/user_<id>/outbox.json`, `plugins/sync_stamp.json`, `droids/*.md` (custom droid definitions), `temp/env|images/`, empty `software-factory/` |
+| small fry | <1M | `certs/system-certs-cache.json`, `cache/certs/factory-cli-child-certs.pem`, `tools/agent-browser/skill-data/`, `telemetry/droid-installation-id`, `crons/<project>/<uuid>/`, `attention-outbox/<id>/user_<id>/outbox.json`, `plugins/sync_stamp.json`, `droids/*.md` (custom droid definitions), `temp/env` + `temp/images`, empty `software-factory/` |
 
 ### `~/Library/` — 36M, the slice Pearcleaner sees
 

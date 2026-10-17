@@ -3,7 +3,7 @@ title: "Mapping Factory's storage footprint outside worktrees"
 parent: log/2026-10
 tags: [factory, droid, macos, storage, usage]
 status: published
-summary: A disk sweep of everything the Factory app and droid CLI write outside worktrees — ~/.factory logs and session transcripts dominate at 1.3G, and PearlCleaner only ever saw the 36M Library slice.
+summary: A disk sweep of everything the Factory app and droid CLI write outside worktrees — ~/.factory logs and session transcripts dominate at 1.3G, and Pearcleaner only ever saw the 36M Library slice.
 published_at: 2026-10-17T13:00:49Z
 ---
 
@@ -14,7 +14,7 @@ published_at: 2026-10-17T13:00:49Z
 - Evidence: this session; `du`/`find` sweeps of `~/.factory`, `~/Library`, `$TMPDIR`, `/tmp`, `/var/tmp`, and system `/Library`; `mdfind` for the app bundle; `lsof` on the live app and `droid daemon`
 - Verdict: keep
 
-PearlCleaner showed me the Library slice of Factory's writes and I
+Pearcleaner showed me the Library slice of Factory's writes and I
 wanted the rest of the picture: every place the app and the CLI
 touch outside worktrees. So I swept the disk. Paths below are
 generalized — `~` for home, `<hash>` and `<uuid>` for identifiers —
@@ -45,7 +45,7 @@ The CLI and daemon state root. 20,317 files.
 | `state/` + root JSONs | <1M | `task-invocations.json`, `background-processes.json`, `history.json`, `sessions-index.json`, `settings.json`, `host.json`, `computer.json`, `org-managed-settings.cache.json`, `update-policy.json`, `pending-askuser-requests.json`, `auth.v2.loginkeychain` (mode 600) |
 | small fry | <1M | `certs/system-certs-cache.json`, `cache/certs/factory-cli-child-certs.pem`, `tools/agent-browser/skill-data/`, `telemetry/droid-installation-id`, `crons/<project>/<uuid>/`, `attention-outbox/<id>/user_<id>/outbox.json`, `plugins/sync_stamp.json`, `droids/*.md` (custom droid definitions), `temp/env|images/`, empty `software-factory/` |
 
-### `~/Library/` — 36M, the slice PearlCleaner sees
+### `~/Library/` — 36M, the slice Pearcleaner sees
 
 | Path | Size | What's in it |
 | --- | --- | --- |

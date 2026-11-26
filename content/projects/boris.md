@@ -27,6 +27,9 @@ Recent on this site:
 - [[log/2026-10-12-cold-start-remote-sandbox]] — cold-starting boris
   in a fresh Linux sandbox surfaced two Zig 0.17.0 fetch bugs; the
   AGENTS.md cold-start section landed as boris #1115.
+- [[log/2026-11-25-factory-last-month]] — the November inventory covers
+  allocation reuse, streamed publication evidence, watch polling repairs,
+  and the open v2026.11.0 calendar-release PR.
 
 ## Satellite tools
 

@@ -29,6 +29,9 @@ judging, and completed milestones are different things.
 
 - [[log/2026-10-14-great-frontier-fart-off]] — Day 1: nine models,
   27 farts, and a milestone counter that has not budged.
+- [[log/2026-11-25-factory-last-month]] — the November inventory,
+  where Brownnote dominates the Factory receipts with 157 indexed
+  commits and 101 associated merged PRs.
 
 The earlier fart-app CI study and the wider week-one recap remain
 drafts awaiting publication. This drawer lets the fart work grow

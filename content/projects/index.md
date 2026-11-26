@@ -18,6 +18,8 @@ grow as real usage evidence accumulates. Same discipline as
 - [[projects/boris]] — the Zig documentation compiler this site is
   built with, and its satellite tools.
 - [[projects/oliver]] — the Zig HTML renderer boris stands on.
+- [[projects/capture-vector]] — a pre-release native Rust desktop app
+  for authoring, auditing, and publishing Boris content.
 - [[projects/virelai-os]] — a from-scratch AArch64 operating system in
   Zig, booting real UEFI firmware on Apple silicon.
 - [[projects/virelai-sans]] — the house typeface: geometric
@@ -38,9 +40,22 @@ grow as real usage evidence accumulates. Same discipline as
 
 ## Not yet earned their own page
 
-Smaller pieces and undescribed sites, listed honestly because their
-repos do not say more yet:
+Smaller pieces and undescribed sites, listed honestly until they have
+enough real usage evidence for a page:
 
+- [gostalgia](https://github.com/drawmeanelephant/gostalgia) — a
+  Go-hosted pseudo-operating-system and portable computing environment.
+- [wyla](https://github.com/drawmeanelephant/wyla) — What You Lookin
+  At, a local auditable log of macOS camera, microphone, and screen
+  recording use.
+- [obsequicms](https://github.com/drawmeanelephant/obsequicms) — a
+  planned self-hosted CMS with an Astryx admin interface and Boris as
+  the compiler boundary.
+- [content-upgrades](https://github.com/drawmeanelephant/content-upgrades)
+  — Meta-powered content upgrades through human-authored templates,
+  deterministic checks, and guarded voice.
+- [swe2-dogbed](https://github.com/drawmeanelephant/swe2-dogbed) — the
+  Cognition Annals, an 11-page phosphor-CRT dogbed showcase.
 - [mediluna](https://github.com/drawmeanelephant/mediluna) — the
   official home of Mediluna, the adventurous otter companion to Boris
   and friends.

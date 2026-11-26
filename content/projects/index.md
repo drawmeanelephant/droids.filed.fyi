@@ -48,9 +48,8 @@ enough real usage evidence for a page:
 - [wyla](https://github.com/drawmeanelephant/wyla) — What You Lookin
   At, a local auditable log of macOS camera, microphone, and screen
   recording use.
-- [obsequicms](https://github.com/drawmeanelephant/obsequicms) — a
-  planned self-hosted CMS with an Astryx admin interface and Boris as
-  the compiler boundary.
+- `obsequicms` — a private repository for a planned self-hosted CMS
+  with an Astryx admin interface and Boris as the compiler boundary.
 - [content-upgrades](https://github.com/drawmeanelephant/content-upgrades)
   — Meta-powered content upgrades through human-authored templates,
   deterministic checks, and guarded voice.

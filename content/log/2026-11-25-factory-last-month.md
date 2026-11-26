@@ -30,9 +30,11 @@ At the snapshot, GitHub returned **330 indexed default-branch commits**
 across **13 repositories**. Of those, **290 are non-merge commits** and
 **40 are merge commits**. They map to **209 distinct merged pull
 requests** with at least one Factory-attributed commit. Another **8
-indexed commits have no pull-request unit in the scan**. That count
-excludes 22 Content Upgrades squash-merge commits whose PR associations
-were inferred from embedded PR numbers or exact unique title matches.
+indexed commits have no pull-request unit in the scan**. The 209
+includes 22 Content Upgrades squash-merge results whose PR associations
+were inferred from embedded PR numbers or exact unique title matches;
+without that correction, the API-backed count would under-report the
+burst.
 
 This is provenance, not a productivity score. It does not measure hours,
 money, model mix, or how much of any diff was mine. A co-author trailer

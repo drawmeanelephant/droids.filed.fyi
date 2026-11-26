@@ -3,7 +3,7 @@ title: Exorcism eve — what the desktop app leaves behind and what it watched
 parent: log/2026-11
 tags: [factory, desktop, telemetry, storage, missions]
 status: draft
-summary: Before uninstalling Factory, an inventory of its logs, its telemetry surface, and its disk footprint — minute-resolution attention records tagged with persistent identity, and one mission that turned 3.2 GB of serial console into five commits.
+summary: Before uninstalling Factory, an inventory of its logs, its telemetry surface, and its disk footprint — ten-minute telemetry records tagged with persistent identity, and one paused mission that accumulated 3.2 GB of evidence beside three indexed commits in one merged PR.
 published_at: 2026-11-26T08:30:00Z
 relations: [relates_to=reviews/factory-droid-final-thoughts, relates_to=log/2026-11-25-factory-last-month]
 ---
@@ -22,13 +22,15 @@ survive the read.
 ## The telemetry is not anonymous, and it is continuous
 
 One day of the desktop log: 1,745 lines, zero errors. Nearly every
-line carries a persistent account ID, org ID, machine IDs, and the
-subscription tier. The only redaction anywhere is a working-directory
-path. Once a minute, while the window is open, the app records memory
-in nine categories, CPU, renderer main-thread utilization, long
-animation frames — and how many agent sessions you have open, in
-buckets. Factory can reconstruct the shape of your working day at
-minute resolution, tied to a persistent identity.
+line carries a persistent account ID, org ID, and subscription tier;
+the computer and host IDs appear in registration lines rather than on
+every metric. The only redaction anywhere is a working-directory
+path. While the window is open, the app records periodic telemetry in
+ten-minute batches: memory in nine categories, CPU by process type,
+renderer main-thread utilization, long animation frames — and how many
+agent sessions you have open, in buckets. Factory can reconstruct the
+shape of your working day at ten-minute resolution, tied to a
+persistent identity.
 
 Evidence boundary: this is the local log. It shows what the app
 records; the aggregation flags say it feeds product metrics, but I did
@@ -47,43 +49,44 @@ every probe with EPERM. Full write-up:
 ## The cost shape moved to mission evidence
 
 `~/.factory` was 2.3 GB in the October storage sweep. It is 5.0 GB
-now, and the growth is almost entirely `missions/` — a tenant that
-barely existed five weeks ago. One mission — the VirelaiOS backlog —
-accounts for 3.2 GB by itself, mostly raw serial-console logs around
-420 MB apiece, kept as evidence for three fleet-acceptance runs. The
-distilled proof in the same directories is a few kilobytes of gate
-files. Merged output from that whole arc: five indexed commits.
+now, and the growth is dominated by `missions/` — a tenant that barely
+existed five weeks ago. One mission — the VirelaiOS backlog — accounts
+for 3.2 GB by itself. Its fleet-acceptance evidence includes six run
+logs of about 400 MB apiece across three runs, plus smaller serial
+logs. The distilled gate and report text is tens of kilobytes per run.
+The mission itself is paused in its local state file; the only merged
+output from it visible in the inventory is three
+indexed Factory-attributed commits, all in
+[PR #3938](https://github.com/drawmeanelephant/VirelaiOS/pull/3938).
 
-That is the subscription in miniature: evidence at machine scale,
-proof nobody will ever read, no pruning anywhere in the design — and
-the valuable 52 KB sitting next to the 3.2 GB, indistinguishable
-without a critic.
+That is the subscription in miniature: evidence at machine scale, far
+more proof than a person can read, no pruning evident in the retention
+behavior I observed — and the useful tens of kilobytes sitting next to
+the 3.2 GB, indistinguishable without a critic.
 
 ## Postscript: the temp trees are worse
 
-`~/.factory` is not even the big tenant. `/private/tmp` holds 100 GB,
-most of it capture-vector worktrees: nine retries of a single PR, each
-a complete Rust workspace of eight to eleven gigabytes — an 8 GB
-`target/` directory plus a 302 MB vendored rune checkout — plus probe
-logs and companion dirs. Every ephemeral workspace also gets its own
-photocopied `.factory` job jacket: the skills, the orientation doc,
-the claims protocol. The harness replicates its scaffolding into every
-temp tree and cleans up none of it. The macOS tmp cleaner will
-eventually reap some of this, but "the OS eventually deletes it" is
-not a retention policy — it is the absence of one, outsourced.
+`~/.factory` is not the whole disk tax. The `/private/tmp` shape is
+still bad even without the inflated number I first drafted: at the
+pinned re-check, two full retry worktrees for one capture-vector PR
+remained, 11 GB and 4.9 GB. Each duplicated a vendored rune checkout
+of roughly 300 MB and multiplied it by a multi-gigabyte Rust `target/`
+directory. Probe directories for retries r10 through r12 show that
+this was a retry loop, not one careful workspace. The `.factory`
+jacket in each tree is only two small skill files; it is evidence of
+scaffolding replication, not meaningful disk usage. I did not pin the
+earlier peak before some retry trees were cleaned, so no larger total
+is claimed here.
 
 Honesty requires one counterweight: not all of the disk tax is the
 harness. Every language in the stack levies its own version. Rust is
-the worst — every target directory is gigabytes, and I deleted perhaps
-500 GB of build artifacts in a single day of ordinary work. Zig is a
-prince by comparison and still leaves a big build directory plus some
-CI guilt. Go is isolated build diarrhea — fast, but scattering its
-little artifacts everywhere. The agent multiplies the workspaces;
-the toolchain multiplies each workspace; the operating system offers
-no transparent deduplication for the nine byte-identical vendored
-checkouts rotting in parallel trees. Every layer has a locally
-reasonable excuse — workspace-local artifacts are a design choice,
-clone-on-write exists but compilers do not use it, cleanup is always
-somebody else's job — and the composition is a hundred gigabytes.
-Nobody owns deletion at any layer, which is the whole problem in one
-sentence.
+the worst — target directories are gigabytes even without agents. Zig
+is a prince by comparison and still leaves a big build directory plus
+some CI guilt. Go is isolated build diarrhea — fast, but scattering
+its little artifacts everywhere. The agent multiplies the workspaces;
+the toolchain multiplies each workspace; nothing in this composition
+deduplicates the copies by default. Every layer has a locally
+reasonable excuse — workspace-local artifacts are a design choice and
+cleanup is always somebody else's job — and the composition is many
+gigabytes. Nobody owns deletion at any layer, which is the whole
+problem in one sentence.

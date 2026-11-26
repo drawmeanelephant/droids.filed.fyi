@@ -24,78 +24,72 @@ last.
 
 | Date | Company | What it is |
 | --- | --- | --- |
-| 2026-05-15 | Lumetric (YC W24) | high-context AI workflows; now shaping the desktop app |
-| 2026-10-09 | Mentlio (YC S26) | in-harness model routing, context compression, token-spend value measurement |
-| 2026-10-30 | Typedef | data lineage and context layer |
-| 2026-11-04 | HumanLayer | Research/Plan/Implement framework, agent best-practices content; being open-sourced |
+| 2026-05-15 | [Lumetric](https://factory.com/news/lumetric) (YC W24) | high-context AI workflows; now shaping the desktop app |
+| 2026-10-09 | [Mentlio](https://factory.com/news/mentlio) (YC S26) | in-harness model routing, context compression, token-spend value measurement |
+| 2026-10-30 | [Typedef](https://factory.com/news/typedef) | data lineage and context layer |
+| 2026-11-04 | [HumanLayer](https://factory.com/news/humanlayer) | Research/Plan/Implement framework, agent best-practices content; being open-sourced |
 
 ## The version number
 
-Alli Pope, ex-Vercel, announced as VP of Marketing on October 26.
-Droid 1.0 announced October 29 — three days later. The 1.0 has real
-technical content: programmatic tool calling by default, with a
+Alli Pope, ex-Vercel, was announced as VP of New Media and Startups
+Marketing on October 26. [Droid 1.0](https://factory.com/news/frontier-harness)
+was announced October 29 — three days later. The 1.0 announcement has
+real technical content: programmatic tool calling by default, with a
 published example of 312 tool calls collapsing into 2 requests and
-3.1M input tokens into 61K. But note what the improvement is: token
-efficiency. That is a margin improvement for a company reselling
-inference at least as much as it is a user benefit — and my own
-experience across exactly that window was that nothing got better.
+about 3.1M input tokens into about 61K. The improvement the post
+quantifies is efficiency: cost, requests, and context use. Whether the
+1.x line improved interactive work in practice is a separate question,
+and this skeleton does not answer it.
 
-The deeper structure is worth naming. The model APIs are wasteful by
-design: every turn re-sends instructions, tools, and history, and the
-waste is the supplier's revenue. A harness vendor's real leverage is
-arbitraging that inefficiency — compression, caching, programmatic
-tool calling — harvesting the difference between what the API charges
-for and what the task actually needed. It is an unstable position:
-the suppliers can reclaim the margin any time with their own caching
-discounts and their own harnesses.
+The structural reading is worth separating from the facts. Model APIs
+re-send instructions, tools, and history on every turn; compression,
+caching, and programmatic tool calling reduce what a harness has to
+send. That can benefit the user and the harness vendor at the same
+time. It also gives the supplier room to reclaim the margin later with
+its own caching discounts or its own harness. That is an inference
+about incentives, not evidence of Factory's internal intent.
 
-And notice where the efficiency pays off hardest. Interactive use has
-a human in the loop constraining token spend. Missions run unattended,
-firing hundreds of model requests to achieve microresults — exactly
-the usage pattern where the meter spins fastest. A twenty percent
-efficiency gain matters most precisely there, which means Droid 1.0
-exists to make the flagship autonomous product economically viable,
-not to make interactive work better. The product's economics and the
-user's interests point in opposite directions: the vendor profits
-most from the usage pattern that produced my worst results.
+The same caution applies to Missions. Interactive use has a human in
+the loop constraining token spend. Unattended runs can issue many more
+model requests for small results, so efficiency improvements matter
+enormously there. But the launch post does not prove that Droid 1.0
+exists only to make Missions viable, and this post should not say it
+does. The deep dive can ask whether the product's economics favor the
+usage pattern that produced my worst results; it cannot state the
+answer as fact.
 
 ## The interpretation the evidence supports
 
-The acquisitions are a map of what the product lacks. Mentlio exists
-because cost-per-value opacity is a real hole — the spreadsheet my
-month of receipts could not build either. HumanLayer's claim to fame
-is a viral prompt framework: Factory did not just sell practices as a
-product, it acquired the practices-content company. And the new
-marketing push — non-engineers shipping code with agents — is aimed
-at a demographic that is not me. The month I used the product hardest
-is the month the company restructured itself around selling it harder.
+The acquisitions can be read as a map of what the product lacks.
+Mentlio speaks to cost-per-value opacity — the spreadsheet my month of
+receipts could not build either. HumanLayer is associated in Factory's
+own announcement with the Research/Plan/Implement framework and agent
+best-practices content: Factory did not just sell practices as a
+product, it acquired a company known for teaching those practices. The
+first visible artifact of the new marketing push is aimed at
+non-engineers shipping code with agents, a demographic that is not me.
+The month I used the product hardest is the month the company visibly
+restructured itself around selling it harder.
 
-## Resume-driven design and the memory gold rush
+## Hypotheses the deep dive still has to test
 
-The convergence is the tell. Everyone in the industry is building
-factory-shaped things at the same time, and it is not because a thousand
-teams independently derived the same architecture from first principles.
-It is because the shape is the credential: you get hired for having
-built the recognizable thing, funded for describing the recognizable
-market, acquired for fitting the recognizable hole. The acquisition
-spree closes the loop — build a factory-shaped startup, get bought by
-Factory, and the shape validates itself. It is a credentialing ecosystem
-wearing a problem-solving costume.
+These are not findings. They need evidence or deletion before
+promotion:
 
-Agentic memory is the worst case: thousands of teams simultaneously
-solving the same problem, poorly, in parallel. Memory is the most
-legible gap in the whole stack — everyone can see the agent forget, and
-a memory demo looks magical in thirty seconds. The hard parts are
-invisible in demos: what to forget, what to trust, contradiction,
-staleness. And nobody lives in the problem long enough to hit them,
-because the incentive is the demo, the launch, the acquihire. So the
-industry produces a thousand memory products that all demo well and
-fail in production in the same ways. This is the meatsuit problem again:
-the programmer optimizes for the programmer's career capital, because
-the meatsuit has a career and the code does not. The honest counterweight
-exists — people who pick a tool purely because the function is good and
-then eat the salad — but they are not the ones getting acquired, and the
-post should say so.
+- **Resume-driven design.** The convergence on factory-shaped products
+  may be partly credentialing: the recognizable shape is legible to
+  hiring managers, investors, and acquirers. The acquisition spree is
+  suggestive, not proof.
+- **The memory gold rush.** Agentic memory is a legible gap and demos
+  well, while forgetting, trust, contradiction, and staleness are hard
+  to show in a launch video. Whether most memory products fail in the
+  same production ways is a research question, not a fact this post
+  has established.
+- **The meatsuit problem.** Builders may optimize for career capital
+  because builders have careers and code does not. The honest
+  counterweight exists — people who pick a tool because the function
+  is good and then eat the salad — but the post needs named evidence
+  before making either claim.
 
 ## Open threads for the deep dive
 

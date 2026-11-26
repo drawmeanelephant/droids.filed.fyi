@@ -27,27 +27,30 @@ card-shaped issues, acceptance bars, readiness checks, and claim
 ledgers before the subscription started. The part of Factory that
 genuinely improved outcomes was the part I was not really buying.
 
-The acquisition record says the company knows exactly what it is
-selling. HumanLayer's claim to fame is a viral prompt framework —
-Research, Plan, Implement. Factory did not just sell practices as a
-product; in November it acquired the practices-content company
-outright. Mentlio exists because token-spend measurement is a real
-hole. Each acquisition is a map of a gap the product cannot fill
-organically.
+The acquisition record can be read as a map of what the company is
+buying around the product. HumanLayer is associated in Factory's own
+announcement with the Research/Plan/Implement framework and agent
+best-practices content. Factory did not just sell practices as a
+product; in November it acquired a company known for teaching those
+practices. Mentlio speaks to token-spend measurement, a real hole.
+Whether each acquisition maps a gap the product cannot fill
+organically is interpretation, not fact — but it is the right deep-dive
+question.
 
 ## The physical form of the thing
 
-You can see the product's shape on disk. Every ephemeral workspace
-the harness touches gets its own copy of the scaffolding: a
-`.factory` directory with the skills, the orientation document, the
-claims protocol — the job jacket, photocopied into every temp tree.
-In `/private/tmp` right now there are nine retry worktrees for a
-single capture-vector PR, each one a full Rust workspace of eight to
-eleven gigabytes, one hundred gigabytes of temp trees in total. The
-discipline is real — the jacket is genuinely good — but the economics
-of photocopying it into every ephemeral workspace and never cleaning
-up are the economics of the whole product: the structure is yours to
-keep, and so is the bill.
+You can see a shadow of the product's shape on disk, though not as
+cleanly as my first draft claimed. In `/private/tmp` at re-check there
+are two full retry worktrees for one capture-vector PR, 11 GB and
+4.9 GB, each carrying a multi-gigabyte Rust `target/` directory and a
+roughly 300 MB vendored rune checkout. Each also has a small
+`.factory` directory containing two skill files — scaffolding
+photocopied into a disposable tree, though not the thick job jacket I
+first described. Probe dirs for retries r10 through r12 show the retry
+loop plainly. The discipline is real — the scaffolding is genuinely
+good — but the economics of copying it into ephemeral workspaces and
+leaving multi-gigabyte trees behind rhyme with the economics of the
+whole product: the structure is yours to keep, and so is the bill.
 
 ## Who it is for
 

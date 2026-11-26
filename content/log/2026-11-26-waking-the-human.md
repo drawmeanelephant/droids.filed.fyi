@@ -12,12 +12,11 @@ relations: [relates_to=reviews/factory-droid-final-thoughts]
 
 - Surface: industry — Factory vs Cognition failure modes
 - Date: 2026-11-26
-- Evidence: a month of watching both products fail at the same small
-  discoverable fact, plus the month's receipts
+- Evidence: a month of watching both products mishandle commit
+  identity, plus the month's receipts
 - Verdict: keep — this is the lens the final review needed
 
-Both agent vendors I used this month fail at knowing my GitHub commit
-email — a fact sitting in the GitHub API, discoverable in one request.
+Both agent harnesses I used this month mishandled commit identity.
 They fail in opposite directions, and the failure modes are a perfect
 little economics lesson.
 
@@ -28,10 +27,10 @@ re-contextualization, the broken flow. Waking the human is the most
 expensive operation in the system.
 
 Cognition does not ask. It commits with whatever email it found —
-sometimes my real one — and publishes it in Git history, where
-harvester bots scrape it within minutes. Fixing it costs some tokens
-and a force-push, but only for my visible copy; the scraped copies do
-not come back.
+sometimes my real one — and publishes it in Git history. Once public,
+that address can be copied by crawlers. Fixing it costs some tokens
+and a force-push, but only for my visible copy; copies already taken
+do not come back.
 
 The tempting lesson is "forgiveness beats permission," and for
 reversible mistakes it is correct. Tokens are cheap and falling;
@@ -39,10 +38,17 @@ human interruption is expensive and not falling. Wrong branch names,
 ugly commit messages, mediocre first drafts — never worth blocking
 on. But the email is the wrong exemplar, because the math depends on
 reversibility, and a leaked email in public history is close to the
-least reversible mistake in the workflow. The correct answer was never
-either failure mode: it was knowing the boring fact, or looking it
-up. The damning part is not which error each vendor picked. It is
-that neither harness knows the environment it works in.
+least reversible mistake in the workflow.
+
+There is also no universal "GitHub commit email" field sitting one
+API request away. The public user endpoint can return no email at
+all; a noreply identity often has to be inferred from the numeric
+user ID or prior commits. That does not excuse either failure mode.
+It sharpens them: the correct behavior is bounded discovery, a
+confidence check, and a hard stop only when publication is
+irreversible and the answer is still uncertain. The damning part is
+not which error each vendor picked. It is that neither harness knows
+the environment it works in.
 
 ## Why both vendors fail the same way
 

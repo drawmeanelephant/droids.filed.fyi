@@ -74,9 +74,11 @@ skill is identical: specs that survive interpretation by someone who
 does not share your context, acceptance criteria, feedback loops
 designed around eccentricities you will never fix. But two things are
 different. The arbitrage ate its own workforce in one generation —
-Kenya is literally where the RLHF labeling was outsourced, so the
-Kenyan workers in a real sense trained the GPUs that replaced them.
-And the old redeeming feature is gone: outsourced teams compounded,
+part of OpenAI's safety-labeling work was outsourced to Kenyan
+workers, who helped train the safety systems upstream of the models
+now being sold as labor replacement. The exact scope of that labeling
+is easy to overstate; the labor pipeline is real. And the old
+redeeming feature is gone: outsourced teams compounded,
 learning your codebase over months. Agents start every session near
 zero, so the learning cannot live in the worker — it has to live in
 the artifacts: the contracts, the gates, the onboarding docs. You are

@@ -10,8 +10,9 @@ published_at: 2026-11-26T08:30:00Z
 # Factory desktop probes Chrome's profile repeatedly without a user action
 
 Filed while inventorying the app before uninstall. Evidence pinned in
-the research stash: a full day of `desktop-droid.log` and the relevant
-code extracted from the shipped `app.asar` (version 1.20.0).
+the research stash: a full day of `desktop-droid.log` from version
+1.20.0 and the relevant code extracted from the shipped `app.asar`
+after the quit-triggered update to 1.21.1.
 
 ## What I did
 
@@ -28,9 +29,13 @@ WARN: [chromeImport] Could not read Chrome Local State
 Context: {"reason":"EPERM", ...}
 ```
 
-Not once at startup: at 17:20, 17:21 (five times inside two minutes),
-17:54, 18:10, 18:48, 20:27, 21:22, on past midnight. Whatever mounts
-the browser-panel UI re-runs the probe every time.
+Not a one-time startup probe: the first warning is at 15:06 UTC,
+followed by a cluster around 17:20 UTC, more probes at 17:54, 18:10,
+18:48, 20:27, and 21:22 UTC, and then additional probes after
+midnight. The shipped IPC surface has a
+`browserPanel:getChromeImportStatus` handler whose availability check
+reads Local State. That is the probe consistent with the log; the log
+alone does not identify which UI mount asked each time.
 
 Reading the shipped code (`initLifecycle-*.js` inside `app.asar`)
 shows what the probe is for. The app ships a feature that imports your
@@ -43,8 +48,9 @@ real Google Chrome cookies into the embedded browser panel session:
 3. pull the "Chrome Safe Storage" key out of the macOS keychain with
    `security find-generic-password`,
 4. decrypt cookies with the standard saltysalt/PBKDF2 construction,
-5. write them into the browser panel's Electron session — so the
-   agent's browser is logged in as you, everywhere you use Chrome.
+5. write the cookies that pass its filters into the browser panel's
+   Electron session — so the agent's browser can inherit Chrome login
+   state.
 
 On this machine nothing past step one ever ran. The probe fails at
 reading Local State, so the import button presumably never renders.
@@ -68,6 +74,8 @@ import itself is user-initiated; the probe is the part with no gate.
 
 ## Verdict
 
-still-broken — as of version 1.20.0, 2026-11-25. Re-check: relaunch
-the app, use the browser panel, count warnings in
+still-broken — observed in version 1.20.0 on 2026-11-25. The import
+code is still present in the extracted 1.21.1 app, but its runtime
+probe behavior there is unchecked. Re-check: relaunch the app, use the
+browser panel, count warnings in
 `~/Library/Logs/Factory/desktop-droid.log`.

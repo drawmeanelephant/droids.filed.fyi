@@ -119,12 +119,13 @@ as a product. It sells best practices — contract-shaped work,
 acceptance gates, evidence trails — wrapped around metered pass-through
 of several vendors' inference, sometimes well. The argument in full is
 in [[log/2026-11-26-practices-as-a-product]]. The short version: the
-practices were already mine, the parts that are the product's own
-contribution fit worst, and the wrapper's real leverage is arbitraging
-the API vendors' wasteful statelessness — a margin the suppliers can
-reclaim whenever they like. The product's gravity pulls toward the
-autonomous surfaces because that is where the meter spins fastest,
-which is precisely the shape of work that served me worst.
+practices were already mine, and the parts that are the product's own
+contribution fit worst. The wrapper can reduce API statelessness
+through compression, caching, and programmatic tool calling; how much
+margin that creates, and who captures it, is an economics question this
+review cannot answer. The autonomous surfaces are also the shape of
+work that served me worst, though the product's business model cannot
+be inferred from that experience alone.
 
 ## Compiler-shaped luck
 
@@ -137,17 +138,17 @@ comparisons. The acceptance-gate workflow worked as well as it did
 partly because I was working in the domain where acceptance gates are
 nearly free.
 
-The counterexample proves the rule. Every TypeScript UI attempt died
-the same death: three sets of tests and a billion tokens to move a
-checkbox that still looks like shit when it is done. Not because the
-agent is worse at TypeScript — because UI output cannot be verified by
-anything except taste, and taste is the one input the machine cannot
-supply and the loop cannot gate on. Worse, tokens spent past the
-verification limit do not merely waste money — they homogenize. Mashed
-potatoes turn to glue when overworked: the starch ruptures under too
-much mechanical action, and no amount of further mashing brings the
-texture back. The billion-token checkbox was not underworked. It was
-glue. The general law: delegability is
+The counterexample proves the rule. In the TypeScript UI attempt I
+watched, the agent layered tests and iterated without convergence on a
+small checkbox-quality problem; I did not pin a token count, so the
+exact spend is unknown. Not because the agent is worse at TypeScript —
+because UI output cannot be verified by anything except taste, and
+taste is the one input the machine cannot supply and the loop cannot
+gate on. Worse, effort spent past the verification limit does not
+merely waste money — it homogenizes. Mashed potatoes turn to glue when
+overworked: the starch ruptures under too much mechanical action, and
+no amount of further mashing brings the texture back. That UI was not
+underworked. It was glue. The general law: delegability is
 proportional to the cheapness of verification. Compilers are the best
 case, CRUD is the middle, and anything whose acceptance criterion is
 "does it feel right" is the worst case — which is most of the software
@@ -158,16 +159,17 @@ than mine.
 
 ## A note on free inference
 
-Factory's generosity in the month — hundreds of dollars of inference
-credits — deserves honest treatment, and the honest treatment is this:
-free inference is not a gift. It is a shovel they handed me, and even
-a free shovel is still a shovel, even if it is a backhoe and has
-heated seats. I still did the digging. The credits do not change the
-shape of anything measured here — they only delay the invoice, which
-is the oldest customer-acquisition mechanic there is. If anything the
-free month made the evidence *better*: I spent freely, optimized for
-nothing, and the true shape of the costs showed up in the receipts
-exactly because nobody was economizing.
+Factory's usage-credit generosity in the month deserves honest
+treatment. I did not pin the dollar amount in a receipt, so I am not
+quoting one. The honest treatment is this: free inference is not a
+gift. It is a shovel they handed me, and even a free shovel is still a
+shovel, even if it is a backhoe and has heated seats. I still did the
+digging. The credits do not change the shape of anything measured here
+— they only delay the invoice, which is the oldest customer-acquisition
+mechanic there is. If anything the free usage made the evidence
+*better*: I spent freely, optimized for nothing, and the true shape of
+the costs showed up in the receipts exactly because nobody was
+economizing.
 
 ## Verdict
 
@@ -177,8 +179,9 @@ earn autopilot trust.
 The honest bottom line first: it did not get as much done as I wanted.
 The numbers look impressive until you ask what shipped. Brownnote's
 roadmap still says nobody has heard it make a sound. Capture-vector is
-pre-release. Most of the 330 commits are plumbing, harnesses, and gates
-— the scaffolding of software rather than the software. Some of that is
+pre-release. Much of the 330-commit count is plumbing, harnesses, and
+gates — the scaffolding of software rather than the software. Some of
+that is
 the nature of a first month: the repos had to become agent-ready before
 agents could be fast in them. But some of it is the product's shape:
 Factory is very good at producing well-formed work units, and producing

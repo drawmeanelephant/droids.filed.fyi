@@ -310,11 +310,11 @@ html[data-mode="pride"] .modes button[data-mode-set="pride"] {
 html[data-mode="pride"] .bar { border-bottom: 2px solid transparent; border-image: var(--rainbow) 1; }
 
 @media (max-width: 47.99rem) {
-  .bar__nav { flex-basis: calc(100% - 2.5rem); }
+  .bar__tools { order: 1; }
+  .bar__nav { order: 2; flex-basis: 100%; }
   .bar__nav .site-nav__trunk > ul { flex-wrap: wrap; gap: .15rem 0; margin-inline: -.32rem; }
   .bar__nav .site-nav__satellite > a { gap: .35rem; padding-inline: .32rem; font-size: .66rem; letter-spacing: .05em; }
-  .bar__tools { margin-left: 0; width: 100%; }
-  .find { flex: 1 1 auto; min-width: 0; gap: .5rem; }
+  .find { min-width: 0; gap: .5rem; }
 }
 
 /* ---------- desk: record + rail ---------- */

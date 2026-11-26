@@ -204,6 +204,13 @@ test("mobile navigation wraps and search can shrink beside color controls", () =
   assert.match(mobile, /\.find \{[^}]*min-width: 0;/);
 });
 
+test("mobile keeps search on the first bar row and wraps navigation instead", () => {
+  const mobile = css.split("@media (max-width: 47.99rem) {")[1].split("/* ---------- desk")[0];
+  assert.match(mobile, /\.bar__tools \{[^}]*order: 1;/);
+  assert.match(mobile, /\.bar__nav \{[^}]*order: 2;[^}]*flex-basis: 100%;/);
+  assert.doesNotMatch(mobile, /\.bar__tools \{[^}]*width: 100%;/);
+});
+
 function luminance(hex) {
   const rgb = [1, 3, 5].map(i => parseInt(hex.slice(i, i + 2), 16) / 255);
   return rgb.map(c => c <= .04045 ? c / 12.92 : ((c + .055) / 1.055) ** 2.4)

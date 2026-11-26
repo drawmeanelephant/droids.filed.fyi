@@ -1,5 +1,5 @@
 ---
-title: Fart work
+title: Farts
 parent: index
 tags: [bucket, factory, audio, farts]
 status: published
@@ -7,7 +7,7 @@ summary: A dedicated shelf for Flatlophone, the Great Frontier Fart Off, and Bro
 relations: [relates_to=projects/index]
 ---
 
-# Fart work
+# Fart work in progress
 
 The fart projects have earned their own drawer. Mostly Factory droids,
 some very serious audio plumbing, and an unreasonable amount of work
